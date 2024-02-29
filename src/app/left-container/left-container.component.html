@@ -1,0 +1,25 @@
+
+<div class="left-container">
+    <div class="nav-bar">
+     <div class="search-icon"><fa-icon [icon]="MagnifyingGlass"></fa-icon></div>
+     <div class="input-box"><input type="text" #place  (keyup)="findCity($event)" placeholder="Search for places ..."></div>
+     <div class="location-icon"><fa-icon [icon]="Location"></fa-icon></div>
+     <div class="city-list" *ngIf="true">
+      <ul>
+         <li  *ngFor="let name of cityName" (click)="sendCityName(name,place)">{{name}}</li>
+      </ul>
+    </div>
+    </div>
+    <div class="weather-container">
+      <div class="current-weather">
+    <div class="weather-img"><img [src]="weatherService.temperatureData.summaryImage" alt="{{weatherService.temperatureData.summaryPhrase}}"></div>
+       <div class="weather-temp">{{weatherService.temperatureData.temperature}}<sup>°</sup>C</div>
+       <div class="weather-day">{{weatherService.temperatureData.day}},{{weatherService.temperatureData.time}}</div>
+      </div>
+       <div class="divide-line"></div>
+      <div class="weather-condition">
+        <div class="cloud-icon"><fa-icon class="cloud-color" [icon]="Cloud"></fa-icon>{{weatherService.temperatureData.summaryPhrase}}</div>
+        <div class="rain-icon" [style.marginTop]="'5px'"><fa-icon class="rain-color" [icon]="Rain"></fa-icon>Rain-{{weatherService.temperatureData.rainPercent}}%</div>
+        <div class="location-image"><img src="https://media.cntraveler.com/photos/5fc6818f3cfe1de2cab79372/master/pass/Amsterdam-GettyImages-840603854.jpg" alt=""><br>{{weatherService.temperatureData.location}}</div> 
+    </div>
+</div>

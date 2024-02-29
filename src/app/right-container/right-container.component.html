@@ -1,0 +1,68 @@
+ <div class="right-container">
+    <div id="nav-container">
+     <div id="left-container">
+      <div [class]="{today:weekToday}" (click)="dayChange()" id="left-container-today" class="today left-container-item">Today</div>
+      <div [class]="{week:!weekToday}" (click)="dayChange()" id="left-container-week" class="week left-container-item">Week</div>
+      <div [class]="{'underline-today':weekToday,'underline-week':!weekToday}" class="underline left-container-item"></div>
+     </div>
+     <div id="right-container">
+     <div [class]="{'right-container-fehrenheit':!tempStatus}" (click)="tempChangeClick()" class="right-container-item right-container-celsius">°C</div>
+     <div [class]="{'right-container-fehrenheit':tempStatus}" (click)="tempChangeClick()" class="right-container-item">°F</div>
+     <div  ><img class="right-container-item" id="right-container-image" src="../../assets/MysorePhoto20220613144550 (1).jpg" alt=""></div>
+     </div>
+    </div>
+    <div class="middle-container">
+      <div class="temperature-zone">
+        <div class="week-temp" *ngIf="!weekToday">
+          <div class="card" *ngFor="let weather of service.weekData">
+            <div class="card-day">{{weather.day}}</div>
+            <div class="card-img"><img [src]="weather.summaryImage" alt=""></div>
+            <div class="card-temp"><span class="max-temp">{{tempStatus==false?weather.tempMax:((weather.tempMax*9)/5+32).toFixed(0)}}° </span><span class="min-temp">{{tempStatus==false?weather.tempMin:((weather.tempMin*9)/5+32).toFixed(0)}}°</span></div>
+          </div>
+        </div>
+        <div class="day-temp" *ngIf="weekToday">
+          <div class="card" *ngFor="let today of service.todayData">
+            <div class="card-time">{{today.time}}</div>
+            <div class="card-img"><img [src]="today.summaryImage" alt=""></div>
+            <div class="card-temp">{{tempStatus==false?today.temp:((today.temp*9)/5+32).toFixed(0)}}°</div>
+          </div>
+          </div>
+      </div>
+      <div class="todays-highlights">
+         <h2 class="title">Today's Highlights</h2>
+         <div class="todays-highlights-container">
+           <div class="box box1">
+            <div class="box-first">UV Index</div>
+            <div><img src="https://media.istockphoto.com/id/1410502741/vector/uv-index-level-sun-numbers-solar-protection-vector-illustration.jpg?s=612x612&w=0&k=20&c=o1uAR3EaAKQ_BbrXo3tfJpX_tj0SuCdvICyEnueVvOc=" alt=""></div>
+            <div [style]="{fontSize:'20px',fontWeight:'bold'}">{{this.service.highlights.uvIndex}}</div>
+           </div>
+           <div class="box box2">
+            <div class="box-first" [style.marginTop]="'2px'">Wind Status</div>
+            <div><h1 [style.display]="'inline'">{{this.service.highlights.windStatus}}</h1><span>km/h</span></div>
+            <div><fa-icon class="meteor" [icon]="Meteor"></fa-icon>WSW</div>
+           </div>
+           <div class="box box3">
+            <div class="box-first"[style.marginTop]="'2px'">Sunrise & Sunset</div>
+            <div><fa-icon class="arrow" [icon]="ArrowUp"></fa-icon>{{this.service.highlights.sunrise}}</div>
+            <div><fa-icon class="arrow" [icon]="ArrowDown"></fa-icon>{{this.service.highlights.sunset}}</div>
+           </div>
+           <div class="box box4">
+            <div class="box-first">Humidity</div>
+            <h1>{{this.service.highlights.humidity}}%</h1>
+            <div>Normal<fa-icon class="thumbsUp" [icon]="ThumbsUp"></fa-icon></div>
+           </div>
+           <div class="box box5">
+            <div class="box-first">Visibility</div>
+            <h1>{{this.service.highlights.visibility}}</h1>
+            <div>Avearge<fa-icon class="faceMeh" [icon]="FaceMeh"></fa-icon></div>
+           </div>
+           <div class="box box6">
+            <div class="box-first">Air Quality</div>
+            <h1>{{this.service.highlights.airQuality}}</h1>
+            <div>Unhealthy<fa-icon class="thumbsDown" [icon]="ThumbsDown"></fa-icon></div>
+           </div>
+         </div>
+      </div>
+      </div>
+ </div>
+ 

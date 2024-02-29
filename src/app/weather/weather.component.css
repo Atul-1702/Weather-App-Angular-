@@ -1,0 +1,31 @@
+
+.app-container
+{
+  width:100vw;
+  height: 100vh;
+  background-color:rgb(214, 216, 217);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.weather-container
+{
+    height:80vh;
+    width:70vw;
+    display: flex;
+}
+.left-container
+{
+    flex:3;
+    background-color: rgb(254, 254, 254);
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+.right-container
+{
+    flex: 7;
+    background-color: rgb(246, 245, 248);
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+}

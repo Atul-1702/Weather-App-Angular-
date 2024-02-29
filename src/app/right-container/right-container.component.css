@@ -1,0 +1,195 @@
+
+.right-container
+{
+  height:100%;
+  display: flex;
+  flex-direction: column;
+  width:100%;
+}
+#nav-container
+{
+  display: flex;
+  justify-content: space-between;
+  height:60px;
+  align-items: center;
+  margin:0px 20px ;
+  font-size: large;
+}
+#left-container
+{
+  display: flex;
+  color:rgb(200, 200, 202);
+}
+#left-container-today,.right-container-celsius
+{
+  margin-right:10px;
+}
+.left-container-item:hover,.today,.week
+{
+  font-weight: bolder;
+  color:rgb(36, 36, 39);
+  cursor: pointer;
+}
+#right-container
+{
+  display: flex;
+  color:rgb(50, 49, 52);
+}
+.right-container-item
+{
+  border-radius: 50%;
+  height:35px;
+  width:35px;
+  margin-top: 5px;
+  background-color: rgb(254, 254, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#right-container-image
+{
+  
+  margin-left: 20px;
+}
+.right-container-item:hover,.right-container-fehrenheit
+{
+  background-color: #19191b;
+  color:rgb(254, 254, 254);
+  cursor: pointer;
+}
+.underline
+{
+  width:40px;
+  height:2px;
+  background-color: #19191b;
+  margin-top: 22px;
+}
+.underline-today
+{
+  transform: translate3d(-240%,0,0);
+ 
+}
+.underline-week
+{
+  transform: translate3d(-100%,0,0);
+  
+}
+/* styles for middle container */
+.middle-container
+{
+   display: flex;
+   flex-direction: column;
+   flex:8;
+}
+/* styles for temprature zone*/
+.temperature-zone
+{
+  flex:2;
+  margin-top: 15px;
+ 
+}
+/* styles for week  tempearture*/
+.week-temp,.day-temp
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+/* styles for cards*/
+.card
+{
+  background-color: #ffffff;
+  border-radius: 10px;
+  width:70px;
+  height:95px;
+  text-align: center;
+  margin-right:7px;
+  margin-left: 7px;
+}
+/* styles for card image*/
+.card-img img
+{
+  height:50px;
+  width:50px;
+}
+/* styles for todays highlights*/
+.todays-highlights
+{
+  flex:6;
+  display: flex;
+  flex-direction: column;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+/* styles for todays highlights title*/
+.title 
+{
+  margin-top: 0px;
+  margin-left: 30px;
+}
+/* styles for todays-highlights-container*/
+.todays-highlights-container
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+ 
+  
+}
+/* styles for todays-highlights-container box*/
+.box
+{
+  background-color: rgb(254, 254, 254);
+  height:145px;
+  width:180px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: column;
+  padding-bottom:10px;
+}
+/* styles for box1 */
+.box1 img
+{
+  height:80px;
+  width:100px;
+  margin-bottom: 0px;
+}
+/* styles for box first*/
+.box-first
+{
+  color:rgb(214, 214, 214);
+  font-weight: bolder;
+  
+  
+  margin-top: 10px;
+}
+/* styles for icons*/
+.meteor
+{
+  color:rgb(85, 76, 170);
+}
+.arrow
+{
+  font-size: x-large;
+  color:rgb(255, 211, 78);
+  margin-right: 10px;
+}
+.thumbsUp
+{
+  color:rgb(112, 86, 151);
+  margin-left: 5px;
+}
+.thumbsDown
+{
+  color:red;
+  margin-left: 7px;
+}
+.faceMeh
+{
+  color:rgb(207, 165, 55);
+  margin-left: 5px;
+}
